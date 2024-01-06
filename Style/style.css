@@ -1,0 +1,116 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the container takes at least the full height of the viewport */
+}
+
+.questions {
+    background-color: #46b2d2;
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+.questions h2 {
+    margin-bottom: 10px;
+}
+
+.questions p {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.usersMessage {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.aiMessage {
+    display: flex;
+    justify-content: first baseline;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}
+
+.user-message {
+    background-color: #707373;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    display: inline-block;
+}
+
+.ai-message {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 10px;
+    padding: 15px;
+    display: inline-block;
+}
+
+.placeholder-text {
+    color: #888;
+    cursor: text; /* Change cursor on hover to indicate it's clickable */
+}
+
+.user-input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.styled-textarea{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-right: 15px;
+    resize: none;
+}
+
+button {
+    padding: 15px;
+    cursor: pointer;
+    background-color: #099cc8;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Style for scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
