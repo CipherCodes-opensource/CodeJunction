@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="Js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" integrity="sha512-Ak6GvzL5yJ2tpHH8bBYdG6kGb8nnsujOSydRE3uq24w9eAl1b3sI9IqkmH3XPC7OM8dbdmWt3kj3A7TQxt+mVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js" integrity="sha512-TpZb2WUHYJcoJW4JM8Sc/8PgoPBQT7X94Qx9wXz0zF2TQ9uHsKMWKiAr81Oh9o8zv4cmTtaaSZ9xtzCm5Yb93Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Examination</title>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="questions">
+            <h2>Question</h2>
+            <p>Tell me a joke</p>
+            <div class="dropdown-container">
+                <label for="programmingLanguage">Select a language:</label>
+                <select id="languageSelect">
+                    <option value="c">C</option>
+                    <option value="cpp">C++</option>
+                    <option value="java">Java</option>
+                    
+                </select>
+            </div>
+        </div>
+        
+        <div class="chat" id="chat">
+        </div>
+        <div class="user-input">
+            <div id="userMessage"  class="styled-textarea" contenteditable="true" spellcheck="false" oninput="highlightCode()" >
+                <div class="placeholder-text" onclick="hidePlaceholder(this)">Type your code here...</div>
+            </div>
+            <button onclick="sendMessage()">Submit</button>
+        </div>
+    </div> 
+    
+    <script>
+        const codeInput = document.getElementById('userMessage');
+        const languageSelector = document.getElementById('languageSelect');
+    
+        codeInput.addEventListener('input', highlightCode);
+        languageSelector.addEventListener('change', highlightCode);
+    
+        function highlightCode() {
+            const codeContent = codeInput.innerText;
+            const selectedLanguage = languageSelector.value;
+            const highlightedCode = Prism.highlight(codeContent, Prism.languages[selectedLanguage], selectedLanguage);
+            codeInput.innerHTML = highlightedCode;
+        }
+    </script>
+</body>
+</html>
